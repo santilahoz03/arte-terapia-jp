@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>アクセス · アートセラピーハンドブック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFF8F4; --bg2: #F6ECFF; --a1: #D9C9F7; --a1d: #B89FE0;
+  --a2: #F3B8D2; --a2d: #E98B7A; --title: #4E4036; --body: #6F6258;
+  --body2: #8A7A70; --card: #FFFFFF; --green: #5BAA7A;
+  --grad: linear-gradient(135deg, #D9C9F7, #F3B8D2);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); color: var(--body); font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif; }
+.wrap { max-width: 640px; margin: 0 auto; padding: 48px 20px 80px; }
+
+.hero { text-align: center; margin-bottom: 40px; }
+.badge-top { display: inline-block; background: var(--grad); color: var(--title); font-size: 12px; font-weight: 700; letter-spacing: .06em; padding: 6px 16px; border-radius: 99px; margin-bottom: 20px; }
+.hero h1 { font-family: 'Noto Serif JP', serif; font-size: 24px; line-height: 1.4; color: var(--title); margin-bottom: 10px; font-weight: 700; }
+.hero p { font-size: 15px; color: var(--body2); line-height: 1.65; }
+
+.stats { display: flex; gap: 12px; justify-content: center; margin: 24px 0 32px; flex-wrap: wrap; }
+.stat { background: var(--card); border: 1.5px solid var(--a1); border-radius: 12px; padding: 14px 20px; text-align: center; min-width: 110px; }
+.stat .num { font-family: 'Noto Serif JP', serif; font-size: 22px; font-weight: 700; color: var(--title); }
+.stat .lbl { font-size: 11px; color: var(--body2); letter-spacing: .02em; margin-top: 2px; }
+
+.sec-header { display: flex; align-items: center; gap: 8px; margin: 32px 0 16px; }
+.sec-header h2 { font-size: 16px; color: var(--title); font-weight: 700; white-space: nowrap; }
+.sec-line { flex: 1; height: 1.5px; background: var(--a1); }
+
+.core-card {
+  background: var(--card); border: 2px solid var(--a1d); border-radius: 16px;
+  padding: 24px 20px; margin-bottom: 24px; position: relative; overflow: hidden;
+}
+.core-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--grad); }
+.core-card .label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a1d); margin-bottom: 8px; }
+.core-card h3 { font-family: 'Noto Serif JP', serif; font-size: 18px; color: var(--title); font-weight: 700; margin-bottom: 6px; }
+.core-card .desc { font-size: 14px; color: var(--body2); line-height: 1.65; margin-bottom: 16px; }
+.core-card .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.core-card .pill { font-size: 11px; background: var(--bg2); border: 1px solid var(--a1); border-radius: 99px; padding: 4px 12px; color: var(--body); }
+
+.bonus-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.bonus-card {
+  background: var(--card); border: 1.5px solid var(--a1); border-radius: 12px;
+  padding: 16px 18px; display: flex; align-items: center; gap: 14px;
+}
+.bonus-card .icon { font-size: 24px; flex-shrink: 0; }
+.bonus-card .info { flex: 1; }
+.bonus-card .info .label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--a1d); margin-bottom: 2px; }
+.bonus-card .info h4 { font-size: 14px; color: var(--title); font-weight: 600; margin-bottom: 2px; }
+.bonus-card .info p { font-size: 12px; color: var(--body2); }
+
+.btn-dl {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--grad); color: var(--title);
+  font-size: 13px; font-weight: 700; padding: 10px 18px;
+  border-radius: 10px; text-decoration: none; border: none; cursor: pointer;
+  flex-shrink: 0; white-space: nowrap; transition: opacity .15s;
+}
+.btn-dl:hover { opacity: .85; }
+.btn-dl svg { width: 15px; height: 15px; flex-shrink: 0; }
+.btn-dl-lg {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; background: var(--grad); color: var(--title);
+  font-size: 15px; font-weight: 700; padding: 14px 20px;
+  border-radius: 12px; text-decoration: none; border: none; cursor: pointer;
+  transition: opacity .15s;
+}
+.btn-dl-lg:hover { opacity: .85; }
+.btn-dl-lg svg { width: 18px; height: 18px; }
+
+.steps { background: var(--bg2); border-radius: 12px; padding: 20px; margin-bottom: 32px; }
+.steps h3 { font-size: 15px; color: var(--title); margin-bottom: 14px; font-weight: 700; }
+.step-row { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+.step-row:last-child { margin-bottom: 0; }
+.step-num { flex-shrink: 0; width: 26px; height: 26px; background: var(--a1d); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; margin-top: 2px; }
+.step-row p { font-size: 13px; color: var(--body); line-height: 1.65; }
+
+.footer-note { text-align: center; font-size: 12px; color: var(--body2); line-height: 1.65; padding: 20px 0; }
+
+.extra-card {
+  background: var(--bg2); border: 1.5px solid var(--a1); border-radius: 12px;
+  padding: 16px 18px; display: flex; align-items: center; gap: 14px; margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 20px; }
+  .stats { gap: 8px; }
+  .stat { min-width: 90px; padding: 10px 14px; }
+  .bonus-card { flex-direction: column; align-items: flex-start; }
+  .btn-dl { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge-top">✅ ご購入ありがとうございます</div>
+    <h1>アートセラピーハンドブック<br>100以上のエクササイズ ＋ 6つの無料ボーナス</h1>
+    <p>すべての教材はここにまとまっています。今すぐダウンロードして始めましょう。</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">100+</div><div class="lbl">エクササイズ</div></div>
+    <div class="stat"><div class="num">6</div><div class="lbl">ボーナス</div></div>
+    <div class="stat"><div class="num">30日</div><div class="lbl">返金保証</div></div>
+  </div>
+
+  <!-- MAIN PRODUCT -->
+  <div class="sec-header"><div class="sec-line"></div><h2>📚 メイン教材</h2><div class="sec-line"></div></div>
+  <div class="core-card">
+    <div class="label">メイン教材</div>
+    <h3>アートセラピーハンドブック</h3>
+    <p class="desc">10テーマ × 100のガイド付きエクササイズ。コラージュ、ジャーナリング、色彩表現など多彩な手法で自己探求を深めます。描けなくても大丈夫。1日10分から始められます。</p>
+    <div class="meta">
+      <span class="pill">📄 PDF · 100ページ以上</span>
+      <span class="pill">🎨 10テーマ</span>
+      <span class="pill">⏱ 10〜30分/エクササイズ</span>
+    </div>
+    <a class="btn-dl-lg" href="../../archivos/core.pdf" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      アートセラピーハンドブックをダウンロード
+    </a>
+  </div>
+
+  <!-- BONUSES -->
+  <div class="sec-header"><div class="sec-line"></div><h2>🎁 ボーナス (6つ)</h2><div class="sec-line"></div></div>
+  <div class="bonus-list">
+    <div class="bonus-card">
+      <div class="icon">✨</div>
+      <div class="info">
+        <div class="label">ボーナス 1 / 6</div>
+        <h4>17の追加アートセラピーエクササイズ</h4>
+        <p>メインハンドブックを補完する17のエクササイズ。さらに深く探求したい方に。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/17-uprazhneniya.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+    <div class="bonus-card">
+      <div class="icon">💙</div>
+      <div class="info">
+        <div class="label">ボーナス 2 / 6</div>
+        <h4>自己肯定感を高める20のエクササイズ</h4>
+        <p>自己評価を高め、自分を大切にするための20のアートベースエクササイズ。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/20-samoocenka.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+    <div class="bonus-card">
+      <div class="icon">🧘</div>
+      <div class="info">
+        <div class="label">ボーナス 3 / 6</div>
+        <h4>不安に対処するインパルスカード</h4>
+        <p>不安や緊張を感じた瞬間に使える50枚のインパルスカード。5カテゴリ。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/50-vaprosa.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+    <div class="bonus-card">
+      <div class="icon">🔓</div>
+      <div class="info">
+        <div class="label">ボーナス 4 / 6</div>
+        <h4>感情的なブロックを解放するインパルス</h4>
+        <p>感情の流れを止めているブロックを見つけ、解放するための25枚のカード。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/emotsionalni-blokazi.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+    <div class="bonus-card">
+      <div class="icon">📗</div>
+      <div class="info">
+        <div class="label">ボーナス 5 / 6</div>
+        <h4>活用・サポートハンドブック</h4>
+        <p>アートセラピーを最大限に活用するための実践ガイド。個人・専門家向け両対応。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/prilagane.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+    <div class="bonus-card">
+      <div class="icon">💎</div>
+      <div class="info">
+        <div class="label">ボーナス 6 / 6</div>
+        <h4>自信を強化する</h4>
+        <p>内側にある自信を育てるための20枚のインパルスカードと5つの習慣ガイド。</p>
+      </div>
+      <a class="btn-dl" href="../../archivos/samouverenosta.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        DL
+      </a>
+    </div>
+  </div>
+
+  <!-- EDITION 2 -->
+  <div class="sec-header"><div class="sec-line"></div><h2>🌟 スペシャルボーナス</h2><div class="sec-line"></div></div>
+  <div class="extra-card">
+    <div class="icon">🎉</div>
+    <div class="info">
+      <div class="label" style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--a1d);margin-bottom:2px;">スペシャルボーナス</div>
+      <h4 style="font-size:14px;color:var(--title);font-weight:600;margin-bottom:2px;">エディション2：100の新しいアートセラピー活動</h4>
+      <p style="font-size:12px;color:var(--body2);">メインの100エクササイズに追加する100の新しい活動。10テーマ × 10の新活動。</p>
+    </div>
+    <a class="btn-dl" href="../../archivos/izdanie-2-100.pdf" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      DL
+    </a>
+  </div>
+
+  <!-- HOW TO START -->
+  <div class="steps">
+    <h3>📌 どこから始めますか？</h3>
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <p>まずアートセラピーハンドブックを開き、テーマ1「感情の表現」の最初のエクササイズを試してみましょう。</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <p>不安やストレスが強い日は、ボーナス3「インパルスカード」を使ってみてください。5分でできます。</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <p>ボーナス5「活用ハンドブック」を読んで、自分の実践スタイル（個人 / グループ）に合わせた使い方を見つけましょう。</p>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <p>慣れてきたらエディション2にチャレンジ。100の新しい活動がさらに深い探求を待っています。</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    このコンテンツは個人使用のみを目的としています。再販・再配布は禁止されています。<br>
+    30日間返金保証付き — ご不明な点はメールでお問い合わせください。
+  </div>
+
+</div>
+</body>
+</html>
